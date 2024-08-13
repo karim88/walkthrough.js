@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkthrough.js Demo</title>
+    <link rel="stylesheet" href="../dist/style.css">
+</head>
+<body>
+<div style="padding-top: 200px">
+    <div id="step1">Step 1: This is the first step.</div>
+    <div id="step2">Step 2: This is the second step.</div>
+</div>
+<script src="../dist/walkthrough.umd.js"></script>
+<script>
+    // Example usage
+    const steps = [
+        {
+            selector: '#step1',
+            type: 'tooltip',
+            content: 'Welcome to the first step!',
+        },
+        {
+            selector: '#step2',
+            type: 'modal',
+            content: '<h2>This is the second step.</h2><p>More details here.</p>',
+        },
+    ];
+
+    Walkthrough.startWalkthrough(steps);
+    //document.querySelector('#step1').addEventListener('click', () => Walkthrough.nextStep())
+</script>
+</body>
+</html>

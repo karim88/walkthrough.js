@@ -1,0 +1,67 @@
+.walkthrough-tooltip {
+  position: absolute;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.walkthrough-highlight {
+  outline: 2px solid #f00;
+  border-radius: 2px;
+}
+
+.walkthrough-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.walkthrough-content {
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.walkthrough-content:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-left: 24px solid white;
+  border-radius: 33px 0;
+  top: -18px;
+  left: 20px;
+  width: 30px;
+  height: 34px;
+}
+
+.walkthrough-buttons {
+  margin-top: 20px;
+
+  button {
+    margin: 0 5px;
+    border: none;
+    background-color: #15616d;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgba(10, 93, 101, 0.66);
+    }
+  }
+  #walkthrough-close {
+    background-color: #78290F;
+    &:hover {
+      background-color: rgba(120, 41, 15, 0.77);
+    }
+  }
+}
