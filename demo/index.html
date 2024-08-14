@@ -10,6 +10,7 @@
 <div style="padding-top: 200px">
     <div id="step1">Step 1: This is the first step.</div>
     <div id="step2">Step 2: This is the second step.</div>
+    <div id="step3">Step 2: This is the a step with iframe content.</div>
 </div>
 <script src="../dist/walkthrough.umd.js"></script>
 <script>
@@ -24,6 +25,15 @@
             selector: '#step2',
             type: 'modal',
             content: '<h2>This is the second step.</h2><p>More details here.</p>',
+        },
+        {
+            selector: '#step3',
+            type: 'modal',
+            content: '<h2>This is the third step.</h2>' +
+                '<p>' +
+                '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGN4ejgydGxpd2d3b3RjOWFmcWZyejFzdHI4bjdxb29qeGN2eTRteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHufwMDTUi20E/giphy.gif" alt="GIPHY" />' +
+                '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
+                '</p>',
         },
     ];
 

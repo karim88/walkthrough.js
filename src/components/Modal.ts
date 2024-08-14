@@ -3,7 +3,9 @@ export function createModal(element: HTMLElement, content: string, onNext: () =>
     modal.className = 'walkthrough-modal';
     modal.innerHTML = `
     <div class="walkthrough-content">
-      ${content}
+      <div class="walkthrough-container">
+          ${content}
+      </div>
       <div class="walkthrough-buttons">
         <button id="walkthrough-prev">Previous</button>
         <button id="walkthrough-next">Next</button>
@@ -20,8 +22,9 @@ export function createModal(element: HTMLElement, content: string, onNext: () =>
     positionModal(element, modal);
 
 }
-function positionModal(element: HTMLElement, tooltip: HTMLElement): void {
+function positionModal(element: HTMLElement, modal: HTMLElement): void {
     const rect = element.getBoundingClientRect();
-    tooltip.style.top = `${rect.top - tooltip.offsetHeight}px`;
-    tooltip.style.left = `${rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)}px`;
+    modal.style.top = rect.top - modal.offsetHeight < 0 ? '0' :`${rect.top - modal.offsetHeight}px`;
+
+    modal.style.left = `${rect.left + (rect.width / 2) - (modal.offsetWidth / 2)}px`;
 }

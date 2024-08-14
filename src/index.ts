@@ -13,7 +13,6 @@ let currentStep = 0;
 let steps: Step[] = [];
 
 export function showStep(index: number): void {
-    console.log(index, steps.length)
     //if (index < 0 || index >= steps.length) return;
 
     const step = steps[index];
@@ -21,12 +20,14 @@ export function showStep(index: number): void {
 
     if (!element) return;
 
+    document.querySelectorAll('.walkthrough-modal')
+        .forEach(item => item.remove())
+
+    document.querySelectorAll('.walkthrough-tooltip')
+        .forEach(item => item.remove())
     if (step.type === 'tooltip') {
         createTooltip(element, step.content, nextStep);
     } else if (step.type === 'modal') {
-        console.log(element, step.content, index);
-        document.querySelectorAll('.walkthrough-modal')
-            .forEach(item => item.remove())
         createModal(
             element,
             step.content,
@@ -41,12 +42,10 @@ export function showStep(index: number): void {
 }
 
 export function nextStep(): void {
-    console.log('next')
     showStep(currentStep + 1);
 }
 
 export function prevStep(): void {
-    console.log('prev')
     showStep(currentStep - 1);
 }
 
@@ -56,7 +55,6 @@ export function highlightElement(element: HTMLElement): void {
 }
 
 export function closeWalkthrough(): void {
-    console.log('close')
     const highlights = document.querySelectorAll('.walkthrough-highlight');
     highlights.forEach(el => el.classList.remove('walkthrough-highlight'));
     const modals = document.querySelectorAll('.walkthrough-modal');
