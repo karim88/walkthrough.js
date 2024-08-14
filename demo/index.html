@@ -10,7 +10,13 @@
 <div style="padding-top: 200px">
     <div id="step1">Step 1: This is the first step.</div>
     <div id="step2">Step 2: This is the second step.</div>
-    <div id="step3">Step 2: This is the a step with iframe content.</div>
+    <div id="step3">Step 3: This is the a step with iframe content.</div>
+    <div id="step4">Step 4: This is the a step with tooltip content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolores earum esse eveniet fugit modi, molestias nesciunt odio perferendis perspiciatis placeat quasi repellendus reprehenderit, rerum voluptatem! Fuga quos repudiandae voluptatibus.</div>
+</div>
+<div style="margin-top: 25px;display: flex;justify-content: space-between;gap: 5px">
+    <div id="flex-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus dolores, eveniet harum illo nobis nostrum quaerat quo sunt ut velit voluptatibus voluptatum? Explicabo facere minus obcaecati quis repudiandae vel.</div>
+    <div class="flex-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda debitis distinctio ipsum nihil odio pariatur provident veritatis. Dolore dolores, doloribus eligendi error harum nulla quis reiciendis sunt ut voluptas!</div>
+    <div data-uid="flex-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur at cumque delectus dolore eveniet ipsam iusto laborum magnam magni, molestiae nesciunt qui quod ratione rem rerum vel voluptas, voluptatum!</div>
 </div>
 <script src="../dist/walkthrough.umd.js"></script>
 <script>
@@ -18,9 +24,10 @@
     const steps = [
         {
             selector: '#step1',
-            type: 'tooltip',
+            type: 'modal',
             content: 'Welcome to the first step!',
         },
+
         {
             selector: '#step2',
             type: 'modal',
@@ -35,9 +42,51 @@
                 '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
                 '</p>',
         },
+        {
+            selector: '#step4',
+            type: 'modal',
+            content: '<h2>This is the fourth step.</h2>' +
+                '<p>' +
+                '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGN4ejgydGxpd2d3b3RjOWFmcWZyejFzdHI4bjdxb29qeGN2eTRteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHufwMDTUi20E/giphy.gif" alt="GIPHY" />' +
+                '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
+                '</p>',
+        },
+
+        {
+            selector: '#flex-1',
+            type: 'modal',
+            content: '<h2>Flex 1.</h2>' +
+                '<p>' +
+                '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGN4ejgydGxpd2d3b3RjOWFmcWZyejFzdHI4bjdxb29qeGN2eTRteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHufwMDTUi20E/giphy.gif" alt="GIPHY" />' +
+                '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
+                '</p>',
+        },
+
+        {
+            selector: '.flex-2',
+            type: 'modal',
+            content: '<h2>Flex 2.</h2>' +
+                '<p>' +
+                '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWYycTF1c3BqMnJranFndzZ0cHhvNWJwMzc4aXZ1cW52NjJydm1paSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3nbxypT20Ulmo/giphy.gif" alt="GIPHY" />' +
+                '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
+                '</p>',
+        },
+
+        {
+            selector: '[data-uid="flex-3"]',
+            type: 'modal',
+            content: '<h2>Flex 3.</h2>' +
+                '<p>' +
+                '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExejgwenhyMjFhcDdpa25oYTJ5dnNhcTZ4NXo5bGR4NjQyaTgxMDVsciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/g5R9dok94mrIvplmZd/giphy.webp" alt="GIPHY" />' +
+                '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
+                '</p>',
+        },
+
     ];
 
-    Walkthrough.startWalkthrough(steps);
+    Walkthrough.initWalkthrough(steps, {
+
+    });
     //document.querySelector('#step1').addEventListener('click', () => Walkthrough.nextStep())
 </script>
 </body>

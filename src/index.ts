@@ -1,13 +1,9 @@
 import { selectElement } from './utils/selectors';
-import { createTooltip } from './components/Tooltip';
+import {createTooltip } from './components/Tooltip';
 import { createModal } from './components/Modal';
 import './styles/walkthrough.scss';
+import {Step} from "./utils/common.interface.ts";
 
-interface Step {
-    selector: string;
-    type: 'tooltip' | 'modal';
-    content: string;
-}
 
 let currentStep = 0;
 let steps: Step[] = [];
@@ -15,30 +11,28 @@ let steps: Step[] = [];
 export function showStep(index: number): void {
     //if (index < 0 || index >= steps.length) return;
 
-    const step = steps[index];
-    const element = selectElement(step.selector);
-
-    if (!element) return;
-
     document.querySelectorAll('.walkthrough-modal')
         .forEach(item => item.remove())
-
-    document.querySelectorAll('.walkthrough-tooltip')
-        .forEach(item => item.remove())
-    if (step.type === 'tooltip') {
-        createTooltip(element, step.content, nextStep);
-    } else if (step.type === 'modal') {
-        createModal(
-            element,
-            step.content,
-            nextStep,
-            prevStep,
-            closeWalkthrough
-        );
+    const step = steps[index];
+    const element = selectElement(step.selector!);
+    if (!element && step.type === 'tooltip') {
+        createTooltip(step);
+        index++
     }
-
-    highlightElement(element);
     currentStep = index;
+    if (!element) return;
+
+    createModal(
+        element,
+        step.content,
+        index,
+        steps.length,
+        nextStep,
+        prevStep,
+        closeWalkthrough
+    );
+
+    highlightElement(element!);
 }
 
 export function nextStep(): void {
@@ -62,7 +56,7 @@ export function closeWalkthrough(): void {
     currentStep = 0;
 }
 
-export function startWalkthrough(walkthroughSteps: Step[]): void {
+export function initWalkthrough(walkthroughSteps: Step[]): void {
     steps = walkthroughSteps;
     showStep(0);
 }
