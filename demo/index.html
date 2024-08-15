@@ -11,15 +11,20 @@
     <div id="step1">Step 1: This is the first step.</div>
     <div id="step2">Step 2: This is the second step.</div>
     <div id="step3">Step 3: This is the a step with iframe content.</div>
-    <div id="step4">Step 4: This is the a step with tooltip content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolores earum esse eveniet fugit modi, molestias nesciunt odio perferendis perspiciatis placeat quasi repellendus reprehenderit, rerum voluptatem! Fuga quos repudiandae voluptatibus.</div>
+    <div id="step4">Step 4: Every time you go through this step the counter increment it's value <span id="counter"></span></div>
 </div>
 <div style="margin-top: 25px;display: flex;justify-content: space-between;gap: 5px">
     <div id="flex-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut delectus dolores, eveniet harum illo nobis nostrum quaerat quo sunt ut velit voluptatibus voluptatum? Explicabo facere minus obcaecati quis repudiandae vel.</div>
-    <div class="flex-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda debitis distinctio ipsum nihil odio pariatur provident veritatis. Dolore dolores, doloribus eligendi error harum nulla quis reiciendis sunt ut voluptas!</div>
+    <div class="flex-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda debitis distinctio ipsum nihil odio pariatur provident veritatis. Dolore dolores, doloribus eligendi error harum nulla quis reiciendis sunt ut voluptas!
+    <button id="just-button">Click me</button>
+    </div>
     <div data-uid="flex-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur at cumque delectus dolore eveniet ipsam iusto laborum magnam magni, molestiae nesciunt qui quod ratione rem rerum vel voluptas, voluptatum!</div>
 </div>
 <script src="../dist/walkthrough.umd.js"></script>
 <script>
+    let counter = 0
+    document.getElementById('counter').innerText = counter.toString()
+    document.getElementById('just-button').addEventListener('click', () => alert('Ya you clicked the button'))
     // Example usage
     const steps = [
         {
@@ -50,6 +55,10 @@
                 '<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGN4ejgydGxpd2d3b3RjOWFmcWZyejFzdHI4bjdxb29qeGN2eTRteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tHufwMDTUi20E/giphy.gif" alt="GIPHY" />' +
                 '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
                 '</p>',
+            callback: () => {
+                counter++
+                document.getElementById('counter').innerText = counter
+            }
         },
 
         {
@@ -70,6 +79,7 @@
                 '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWYycTF1c3BqMnJranFndzZ0cHhvNWJwMzc4aXZ1cW52NjJydm1paSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3nbxypT20Ulmo/giphy.gif" alt="GIPHY" />' +
                 '<p><a href="https://giphy.com/gifs/school-back-guinea-tHufwMDTUi20E">via GIPHY</a></p>' +
                 '</p>',
+            callback: () => document.getElementById('just-button').click()
         },
 
         {
@@ -84,10 +94,7 @@
 
     ];
 
-    Walkthrough.initWalkthrough(steps, {
-
-    });
-    //document.querySelector('#step1').addEventListener('click', () => Walkthrough.nextStep())
+    Walkthrough.initWalkthrough(steps);
 </script>
 </body>
 </html>

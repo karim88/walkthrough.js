@@ -31,6 +31,7 @@ export function showStep(index: number): void {
         prevStep,
         closeWalkthrough
     );
+    step.callback?.();
 
     highlightElement(element!);
 }

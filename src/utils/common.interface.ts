@@ -10,4 +10,5 @@ export interface Step {
     selector?: string;
     type: 'tooltip' | 'modal';
     content: string;
+    callback?: () => void;
 }
