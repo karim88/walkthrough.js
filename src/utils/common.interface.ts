@@ -12,3 +12,13 @@ export interface Step {
     content: string;
     callback?: () => void;
 }
+
+export interface ModalOptions {
+    element: HTMLElement;
+    content: string;
+    index?: number;
+    length?: number;
+    onNext: () => void;
+    onPrev: () => void;
+    onClose: () => void;
+}

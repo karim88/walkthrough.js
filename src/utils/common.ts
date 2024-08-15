@@ -7,3 +7,7 @@ export function selectElement(selector: string): HTMLElement | null {
         return document.querySelector(selector);
     }
 }
+
+export function bindEvent(id: string, handler: () => void): void {
+    document.getElementById(id)?.addEventListener('click', handler);
+}

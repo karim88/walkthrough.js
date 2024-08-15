@@ -31,10 +31,11 @@
   padding: 20px 20px 10px;
   border-radius: 10px;
   text-align: center;
+  max-width: 40%;
+  overflow: hidden;
   .walkthrough-container {
     video, iframe, img {
-      max-width: 200px;
-      max-height: 200px;
+      max-width: 100%;
       aspect-ratio: 1;
     }
     video, iframe {
@@ -46,17 +47,6 @@
   }
 }
 
-.walkthrough-content:after {
-  content: "";
-  position: absolute;
-  border: 0 solid transparent;
-  border-left: 24px solid white;
-  border-radius: 33px 0;
-  top: -18px;
-  left: 20px;
-  width: 30px;
-  height: 34px;
-}
 
 .walkthrough-buttons {
   margin-top: 20px;
@@ -75,6 +65,7 @@
     }
     .current {
       color: #15616d;
+      font-weight: bolder;
     }
   }
 
@@ -97,13 +88,14 @@
 
 #walkthrough-close {
   position: absolute;
-  right: -10px;
-  top: -10px;
-  border-radius: 20px;
+  right: 0;
+  top: 0;
   border: none;
   background-color: #78290f;
   color: #fff;
   padding: 8px 11px;
+  z-index: 1002;
+
   &:hover {
     background-color: rgba(120, 41, 15, 0.77);
   }
