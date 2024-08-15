@@ -18,7 +18,8 @@ export function createModal(
         <div id="walkthrough-steps"></div>
         <div>
             <button id="walkthrough-prev" ${index === 0 ? 'disabled' : ''}>Previous</button>
-            <button id="walkthrough-next" ${index <= length -1 ? '' : 'disabled'}>Next</button>
+            <button id="walkthrough-next" class="${index < length -1 ? '' : 'hidden'}">Next</button>
+            <button id="walkthrough-finish" class="${index < length -1 ? 'hidden' : ''}">Finish</button>
         </div>
       </div>
     </div>
@@ -37,6 +38,7 @@ export function createModal(
     document.getElementById('walkthrough-next')?.addEventListener('click', onNext);
     document.getElementById('walkthrough-prev')?.addEventListener('click', onPrev);
     document.getElementById('walkthrough-close')?.addEventListener('click', onClose);
+    document.getElementById('walkthrough-finish')?.addEventListener('click', onClose);
     positionModal(element, modal);
 }
 
