@@ -1,0 +1,39 @@
+{
+  "name": "@karim88/walkthrough.js",
+  "version": "1.0.2",
+  "description": "@karim88/walkthrough.js is a lightweight and customizable library for creating interactive tutorials and guided tours for your website. Enhance user experience by providing step-by-step instructions, contextual tooltips, and highlights to guide users through complex workflows or new features.",
+  "main": "dist/walkthrough.umd.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4",
+    "sass": "^1.77.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karim88/walkthrough.js.git"
+  },
+  "keywords": [
+    "walkthrough",
+    "tooltips",
+    "interactive",
+    "tutorials",
+    "tutorials",
+    "guided",
+    "tours"
+  ],
+  "author": "Karim Oulad Chalha <ouladchalha.k@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karim88/walkthrough.js/issues"
+  },
+  "homepage": "https://github.com/karim88/walkthrough.js#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
