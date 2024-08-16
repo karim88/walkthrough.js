@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walkthrough.js Demo</title>
     <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="demo.css">
 </head>
+
 <body>
-<div style="padding-top: 200px">
+<div class="container">
+    <h1>Walkthrough.js Demo</h1>
+
     <!-- Step 1: Introduction to the Walkthrough -->
-    <div id="step1">Welcome to the interactive guide. Let's start with the basics.</div>
+    <div id="step1" class="walkthrough-step">
+        Welcome to the interactive guide. Let's start with the basics.
+    </div>
 
     <!-- Step 2: Highlighting a Key Feature -->
-    <div id="step2">Here's a key feature of our website. Pay close attention to this section.</div>
+    <div id="step2" class="walkthrough-step">
+        Here's a key feature of our website. Pay close attention to this section.
+    </div>
 
     <!-- Step 3: Embedded Content Example -->
-    <div id="step3">This step includes embedded content. Notice how the iframe is handled.</div>
+    <div id="step3" class="walkthrough-step">
+        This step includes embedded content. Notice how the iframe is handled.
+    </div>
 
     <!-- Step 4: Dynamic Content Interaction -->
-    <div id="step4">
-        This step demonstrates dynamic content. Each time you visit, the counter increments: <span id="counter"></span>
+    <div id="step4" class="walkthrough-step">
+        This step demonstrates dynamic content. Each time you visit, the counter increments:
+        <span id="counter"></span>
     </div>
 </div>
 
-<div style="margin-top: 25px; display: flex; justify-content: space-between; gap: 5px">
+<div class="flex-container">
     <!-- Flex Item 1: Responsive Layout Showcase -->
-    <div id="flex-1">
+    <div id="flex-1" class="flex-item">
         This section demonstrates how content can be distributed across a flexible layout. Responsive design ensures it looks great on any device.
     </div>
 
     <!-- Flex Item 2: Interactive Element Example -->
-    <div class="flex-2">
+    <div class="flex-item flex-2">
         Interactivity is key to engaging users. Click the button to trigger an action.
-        <button id="just-button">Click me</button>
+        <button id="just-button" class="button-primary">Click me</button>
     </div>
 
     <!-- Flex Item 3: Custom Data Attributes -->
-    <div data-uid="flex-3">
+    <div data-uid="flex-3" class="flex-item">
         Custom data attributes can be used to target specific elements, making your UI more dynamic and interactive.
     </div>
 </div>
@@ -47,7 +59,6 @@
     document.getElementById('counter').innerText = counter.toString();
     document.getElementById('just-button').addEventListener('click', () => alert('You clicked the button!'));
 
-    // Define the walkthrough steps
     const steps = [
         {
             selector: '#step1',
@@ -93,12 +104,13 @@
             selector: '[data-uid="flex-3"]',
             type: 'modal',
             content: '<h2>Custom Data Attributes</h2>' +
-                '<p>Utilizing custom data attributes can significantly enhance your application\'s dynamic capabilities.</p>',
+                '<p>Utilizing custom data attributes can significantly enhance your application\'s dynamic capabilities.</p>' +
+                '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWYycTF1c3BqMnJranFndzZ0cHhvNWJwMzc4aXZ1cW52NjJydm1paSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3nbxypT20Ulmo/giphy.webp" alt="Coffee Shop Cat GIF" />',
         },
     ];
 
-    // Initialize the walkthrough with the defined steps
     Walkthrough.initWalkthrough(steps);
 </script>
 </body>
+
 </html>
