@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@karim88/walkthrough.js Demo</title>
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="demo.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>@karim88/walkthrough.js Demo</h1>
+
+    <!-- Step 1: Introduction to the Walkthrough -->
+    <div id="step1" class="walkthrough-step">
+        Welcome to the interactive guide. Let's start with the basics.
+    </div>
+
+    <!-- Step 2: Highlighting a Key Feature -->
+    <div id="step2" class="walkthrough-step">
+        Here's a key feature of our website. Pay close attention to this section.
+    </div>
+
+    <!-- Step 3: Embedded Content Example -->
+    <div id="step3" class="walkthrough-step">
+        This step includes embedded content. Notice how the iframe is handled.
+    </div>
+
+    <!-- Step 4: Dynamic Content Interaction -->
+    <div id="step4" class="walkthrough-step">
+        This step demonstrates dynamic content. Each time you visit, the counter increments:
+        <span id="counter"></span>
+    </div>
+</div>
+
+<div class="flex-container">
+    <!-- Flex Item 1: Responsive Layout Showcase -->
+    <div id="flex-1" class="flex-item">
+        This section demonstrates how content can be distributed across a flexible layout. Responsive design ensures it looks great on any device.
+    </div>
+
+    <!-- Flex Item 2: Interactive Element Example -->
+    <div class="flex-item flex-2">
+        Interactivity is key to engaging users. Click the button to trigger an action.
+        <button id="just-button" class="button-primary">Click me</button>
+    </div>
+
+    <!-- Flex Item 3: Custom Data Attributes -->
+    <div data-uid="flex-3" class="flex-item">
+        Custom data attributes can be used to target specific elements, making your UI more dynamic and interactive.
+    </div>
+</div>
+
+<script src="../dist/walkthrough.umd.js"></script>
+<script>
+    let counter = 0;
+    document.getElementById('counter').innerText = counter.toString();
+    document.getElementById('just-button').addEventListener('click', () => alert('You clicked the button!'));
+
+    const steps = [
+        {
+            selector: '#step1',
+            type: 'modal',
+            content: 'Welcome to the first step of our guided tour. We\'ll walk you through the key features of this page.',
+        },
+        {
+            selector: '#step2',
+            type: 'modal',
+            content: '<h2>Key Feature Highlight</h2><p>This section is crucial for understanding how our site works.</p>',
+        },
+        {
+            selector: '#step3',
+            type: 'modal',
+            content: '<h2>Embedded Content</h2>' +
+                '<p>Here is an example of embedded content. Notice how it integrates seamlessly into the walkthrough.</p>' +
+                '<iframe src="https://youtube.com/embed/TgqiSBxvdws?si=Bh3curX8X0ERdXXR&t=12" frameborder="0" allowfullscreen></iframe>',
+        },
+        {
+            selector: '#step4',
+            type: 'modal',
+            content: '<h2>Dynamic Content Interaction</h2>' +
+                '<p>This step showcases dynamic interaction. Each time you revisit, the counter increases.</p>',
+            callback: () => {
+                counter++;
+                document.getElementById('counter').innerText = counter.toString();
+            }
+        },
+        {
+            selector: '#flex-1',
+            type: 'modal',
+            content: '<h2>Responsive Layouts</h2>' +
+                '<p>This section illustrates how content can be effectively distributed across a flexible layout, ensuring a responsive design.</p>',
+        },
+        {
+            selector: '.flex-2',
+            type: 'modal',
+            content: '<h2>Interactivity</h2>' +
+                '<p>Click the button below to trigger an alert. Interactivity enhances user engagement.</p>',
+            callback: () => document.getElementById('just-button').click(),
+        },
+        {
+            selector: '[data-uid="flex-3"]',
+            type: 'modal',
+            content: '<h2>Custom Data Attributes</h2>' +
+                '<p>Utilizing custom data attributes can significantly enhance your application\'s dynamic capabilities.</p>' +
+                '<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWYycTF1c3BqMnJranFndzZ0cHhvNWJwMzc4aXZ1cW52NjJydm1paSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3nbxypT20Ulmo/giphy.webp" alt="Coffee Shop Cat GIF" />',
+        },
+    ];
+
+    Walkthrough.initWalkthrough(steps);
+</script>
+</body>
+
+</html>
