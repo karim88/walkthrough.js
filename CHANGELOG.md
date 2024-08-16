@@ -24,12 +24,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Security
 - N/A
 
-## [1.0.1] - 2024-08-15
+## [1.0.2] - 2024-08-16
+
+### Changed
+- ignoring idea folder :smile:
+
+## [1.0.1] - 2024-08-16
 
 ### Changed
 - Updated the README file to include instructions on deploying the package to npm and other minor improvements.
 
-## [1.0.0] - 2024-08-14
+## [1.0.0] - 2024-08-16
 
 ### Added
 - Initial release with the following features:
