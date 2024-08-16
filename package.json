@@ -1,8 +1,8 @@
 {
-  "name": "walkthrough.js",
-  "version": "1.0.0",
-  "description": "Walkthrough.js is a lightweight and customizable library for creating interactive tutorials and guided tours for your website. Enhance user experience by providing step-by-step instructions, contextual tooltips, and highlights to guide users through complex workflows or new features.",
-  "main": "index.js",
+  "name": "@karim88/walkthrough.js",
+  "version": "1.0.1",
+  "description": "@karim88/walkthrough.js is a lightweight and customizable library for creating interactive tutorials and guided tours for your website. Enhance user experience by providing step-by-step instructions, contextual tooltips, and highlights to guide users through complex workflows or new features.",
+  "main": "dist/walkthrough.umd.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/karim88/walkthrough.js/issues"
   },
-  "homepage": "https://github.com/karim88/walkthrough.js#readme"
+  "homepage": "https://github.com/karim88/walkthrough.js#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
