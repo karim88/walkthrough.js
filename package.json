@@ -1,13 +1,16 @@
 {
-  "name": "@karim88/walkthrough.js",
-  "version": "1.0.2",
-  "description": "@karim88/walkthrough.js is a lightweight and customizable library for creating interactive tutorials and guided tours for your website. Enhance user experience by providing step-by-step instructions, contextual tooltips, and highlights to guide users through complex workflows or new features.",
+  "name": "@ouladck/walkthrough.js",
+  "version": "2.0.0",
+  "description": "@ouladck/walkthrough.js is a lightweight and customizable library for creating interactive tutorials and guided tours for your website. Enhance user experience by providing step-by-step instructions, contextual tooltips, and highlights to guide users through complex workflows or new features.",
   "main": "dist/walkthrough.umd.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "patch": "npm version patch -m \"Upgrade to %s\" && git push && git push --tags",
+    "minor": "npm version minor -m \"Upgrade to %s\" && git push && git push --tags",
+    "major": "npm version major -m \"Upgrade to %s\" && git push && git push --tags"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
@@ -16,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karim88/walkthrough.js.git"
+    "url": "git+https://github.com/ouladck/walkthrough.js.git"
   },
   "keywords": [
     "walkthrough",
@@ -30,9 +33,9 @@
   "author": "Karim Oulad Chalha <ouladchalha.k@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/karim88/walkthrough.js/issues"
+    "url": "https://github.com/ouladck/walkthrough.js/issues"
   },
-  "homepage": "https://github.com/karim88/walkthrough.js#readme",
+  "homepage": "https://github.com/ouladck/walkthrough.js#readme",
   "publishConfig": {
     "access": "public"
   }
