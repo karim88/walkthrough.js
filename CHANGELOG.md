@@ -24,6 +24,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Security
 - N/A
 
+## [1.0.3] - 2024-08-19
+
+### Changed
+- changed the package name
+
 ## [1.0.2] - 2024-08-16
 
 ### Changed
@@ -44,6 +49,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Support for dynamic content interaction.
   - Responsive design elements.
 
-[Unreleased]: https://github.com/karim88/walkthrough.js/compare/v1.0.1...HEAD
-[1.0.1]: https://github.com/karim88/walkthrough.js/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/karim88/walkthrough.js/releases/tag/v1.0.0
+[Unreleased]: https://github.com/ouladck/walkthrough.js/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ouladck/walkthrough.js/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/ouladck/walkthrough.js/releases/tag/v1.0.0
