@@ -1,6 +1,8 @@
-# @karim88/walkthrough.js
+# @ouladck/walkthrough.js
 
-**@karim88/walkthrough.js** is a lightweight, customizable JavaScript plugin that provides an interactive walkthrough experience for your web application. Built with TypeScript and SCSS, this plugin allows you to guide users through key features and elements of your website, enhancing their understanding and engagement.
+**@ouladck/walkthrough.js** is a lightweight, customizable JavaScript plugin that provides an interactive walkthrough experience for your web application. Built with TypeScript and SCSS, this plugin allows you to guide users through key features and elements of your website, enhancing their understanding and engagement.
+
+[![Demo](https://img.youtube.com/vi/23M9E-nFdcs/0.jpg)](https://youtu.be/23M9E-nFdcs)
 
 ## Table of Contents
 
@@ -18,7 +20,7 @@
 You can install the plugin via npm:
 
 ```bash
-npm i @karim88/walkthrough.js
+npm i @ouladck/walkthrough.js
 ```
 
 Or use it directly from the `dist folder by including the JavaScript and CSS files in your project:
@@ -35,7 +37,7 @@ Or use it directly from the `dist folder by including the JavaScript and CSS fil
 First, import and initialize the walkthrough in your JavaScript file:
 
 ```javascript
-import Walkthrough from '@karim88/walkthrough.js';
+import Walkthrough from '@ouladck/walkthrough.js';
 
 const steps = [
     {
